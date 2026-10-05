@@ -21,7 +21,8 @@ public class Main {
 		JFrame MainFrame = new JFrame();
 		MainFrame.setSize(screenWidth, screenHeight);
 		MainFrame.getContentPane().setBackground(Color.black);
-		// Image icon = Toolkit.getDefaultToolkit().getImage("https://cifpcaminodelamiranda.centros.educa.jcyl.es/sitio/skins/jcyl/img/logo_primario.gif");
+		Image icon = Toolkit.getDefaultToolkit().getImage("C:\\Users\\junior\\eclipse-workspace\\ClassTest\\src\\Assets\\icon.jpg");
+		MainFrame.setIconImage(icon);
 		SetVisible(true, MainFrame);
 	}
 	
