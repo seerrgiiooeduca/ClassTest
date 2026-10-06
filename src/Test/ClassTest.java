@@ -1,10 +1,11 @@
 package Test;
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class ClassTest {
 	public static void main(String args[]) {
 		// Exercise1(300); // Simple print with arguments exercise
-		Exercise2();
+		ScannerExam();
 	}
 	
 	static void Exercise1(double EURO) {
@@ -24,15 +25,18 @@ public class ClassTest {
 		int SecondNumber;
 		int Addition, Substraction, Multiply, Division, Reminder;
 		
-		Scanner FirstNumberScanner
+		Scanner FirstNumberScanner = new Scanner(System.in);
+		System.out.println("What's the value for the first number?");
+		FirstNumber = FirstNumberScanner.nextInt();
+		Scanner SecondNumberScanner = new Scanner(System.in);
+		System.out.println("What's the value for the second number?");
+		SecondNumber = SecondNumberScanner.nextInt();
+		
 		/*
 		 * Now what we do here is modifying the values of FirstNumber and SecondNumber.
 		 * Then we modify the value of Result calculating the addition of both values.
 		 */
-		
-		FirstNumber = 1;
-		SecondNumber = 2;
-		
+				
 		Addition = FirstNumber + SecondNumber;
 		
 		System.out.println("The addition of " + FirstNumber + " and " + SecondNumber + " is equals to: " + Addition);
@@ -59,6 +63,71 @@ public class ClassTest {
 		 */
 		
 
+		
+	}
+	
+	static void Exercise3() {
+		int i = -3;
+		byte b = 5;
+		float f = 1e-10f;
+		double d = 3.14;
+		boolean b1 = i > i;
+		boolean b2 = i < b;
+		boolean b3 = b <=f;
+		boolean b4 = f >= d;
+		boolean b5 = d!=0;
+		boolean b6 = 1==f;
+		System.out.println("b1:" + i + ">" + i + "="+b1);
+		System.out.println("b2:" + i + "<" + b + "="+b2);
+		System.out.println("b3:" + b + "<=" + f + "="+b3);
+		System.out.println("b4:" + f + ">=" + d + "="+b4);
+		System.out.println("b5:" + d + "!=" + 0 + "="+b5);
+		System.out.println("b6:" + 1 + "==" + f + "="+b6);
+	}
+	
+	static void Exercise4() {
+		
+		int operation = ((4-2) * (5+1)/2);
+		int op2= 2 - (4+3);
+		boolean b=operation>op2;
+		
+		System.out.println("First math is: " + operation + " and then second math is: " + op2 + " so then the comparation of  operation > op2 " + b);
+	}
+	
+	static void ScannerExample() {
+		try (Scanner newScanner = new Scanner(System.in)) {
+			System.out.println("Give me a number");
+			while (true) {
+				if (newScanner.hasNextInt()) {
+					System.out.println("Player gave the number:" + newScanner.nextInt()); 
+					break;
+				} else {
+					throw new InputMismatchException("User gave shit ");
+				}
+			}
+		} 
+		catch(Exception e) {
+			System.out.println("We fucked up some how and got: " + e.getMessage() );
+		}
+	}
+	
+	static void ScannerExam() {
+		/* 
+		 * This is like an exam for my own. I have to create an input. Ask for a char (DNI letter) and a float (DNI numbers) 
+		 */
+		
+		Scanner DNI_Char = new Scanner(System.in);
+		System.out.println("What's your DNI letter");
+		String letraDNI = DNI_Char.nextLine();
+		System.out.println("What's you DNI? (Max 8 characters)");
+		String numerosDNI = DNI_Char.nextLine();
+		if (numerosDNI.length() != 8) {
+			System.out.println("You gave "+ numerosDNI.length() + " when we need 8 numbers. Please, try again.");
+			DNI_Char.nextLine();
+			System.out.println("What's your DNI? (Max 8 characters)");
+		} 
+		String fullDNI = numerosDNI + letraDNI;
+		System.out.println("The users DNI is " + fullDNI);
 		
 	}
 }
