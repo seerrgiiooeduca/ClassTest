@@ -117,17 +117,32 @@ public class ClassTest {
 		 */
 		
 		Scanner DNI_Char = new Scanner(System.in);
-		System.out.println("What's your DNI letter");
-		String letraDNI = DNI_Char.nextLine();
-		System.out.println("What's you DNI? (Max 8 characters)");
-		String numerosDNI = DNI_Char.nextLine();
-		if (numerosDNI.length() != 8) {
-			System.out.println("You gave "+ numerosDNI.length() + " when we need 8 numbers. Please, try again.");
-			DNI_Char.nextLine();
-			System.out.println("What's your DNI? (Max 8 characters)");
-		} 
-		String fullDNI = numerosDNI + letraDNI;
-		System.out.println("The users DNI is " + fullDNI);
+		String letraDNI, numerosDNI;
+		while (true) {
+			
+			System.out.println("What's your DNI letter");
+			letraDNI = DNI_Char.nextLine();
+			
+			if(letraDNI.length() != 1 || !Character.isLetter(letraDNI.charAt(0))) {
+				System.out.println("You have to give us your DNI letter");
+				continue;
+			} 
+			break;
+		}
 		
+		while (true) {
+			System.out.println("What's you DNI? (Max 8 characters)");
+			numerosDNI = DNI_Char.nextLine();
+			
+			if(numerosDNI.length() != 8) {
+				System.out.println("You gave " + numerosDNI.length() + " when we asked for 8 numbers. Try again");
+				continue;
+			}			
+			break;
+		}
+		
+		String fullDNI = numerosDNI + letraDNI.toUpperCase();
+		System.out.println("The users DNI is " + fullDNI);
+		DNI_Char.close();
 	}
 }

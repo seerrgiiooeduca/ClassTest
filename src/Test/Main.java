@@ -17,12 +17,19 @@ public class Main {
 		Element.setVisible(isTrue);
 	}
 	
+	void chunckGenerator(short sizeX, short sizeY) {
+		
+	}
+	
 	void Interfaz(String args[]) {
 		JFrame MainFrame = new JFrame();
 		MainFrame.setSize(screenWidth, screenHeight);
 		MainFrame.getContentPane().setBackground(Color.black);
 		
-		Image icon = Toolkit.getDefaultToolkit().getImage("C:\\Users\\junior\\eclipse-workspace\\ClassTest\\src\\Assets\\icon.jpg");
+		try (
+				Image icon = Toolkit.getDefaultToolkit().getImage(getClass().getResource("/Assets/icon.jpg"){
+			
+		}
 		MainFrame.setIconImage(icon);
 		
 		JTextArea MainTitle = new JTextArea(1, 1);
