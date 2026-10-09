@@ -4,8 +4,7 @@ import java.util.Scanner;
 
 public class ClassTest {
 	public static void main(String args[]) {
-		// Exercise1(300); // Simple print with arguments exercise
-		ScannerExam();
+		activity17();
 	}
 	
 	static void Exercise1(double EURO) {
@@ -144,5 +143,66 @@ public class ClassTest {
 		String fullDNI = numerosDNI + letraDNI.toUpperCase();
 		System.out.println("The users DNI is " + fullDNI);
 		DNI_Char.close();
+	}
+	
+	static void CastingExample() {
+		/*
+		 * Casting means changing the data type of any value to another
+		 * 
+		 * IT DOES NOT WORK WITH OTHER DATA TYPES THAN NUMBERS
+		 * 
+		 * float, int, long, double and short
+		 */
+			
+		double floatExample = 12345.56789;
+		int result = (int)floatExample;
+		
+		System.out.println(result); // Here the print is not "12345.56789", it is printing "123456" because we using the double as an integer
+		System.out.println(floatExample);
+	}
+	
+	static void OperatorsExample() {
+		float i = 5;
+		float j;
+		j = i++;
+		 
+		// En español porque es loco. "i++" y "++i" es la misma mierda.
+		// En "i++" primero se iguala el valor a i y luego se suma 1.
+		// En "++i" primero se suma 1 y luego se igual
+		//
+		// NO SIRVE PARA ABSOLUTAMENTE NADA DE NADA
+	}
+	
+	static void conditionals() {
+		short i = 1;
+		short j = 2;
+		
+		if (i >= j) {
+			System.out.println("I is bigger or equal than J");
+		} else {
+			System.out.println("J is bigger than J");
+		}
+		
+	}
+	
+	static void activity17() {
+		short i;
+		
+		Scanner lector = new Scanner(System.in);
+		
+		System.out.println("Tell me your number");
+		i = lector.nextShort();
+		
+		if (i > 0) {
+			System.out.println("I is positive");
+		} else if (i < 0) {
+			System.out.println("J is negative");
+		} else {
+			System.out.println("I is 0");
+		}
+	}
+	
+	static void parseExample() {
+		
 	}
 }

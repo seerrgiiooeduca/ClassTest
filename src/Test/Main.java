@@ -4,7 +4,6 @@ import java.awt.Toolkit;
 import javax.swing.*;
 import java.awt.Color;
 import java.awt.Image;
-
 public class Main {
 	
 	// Get screen size to create the window with these values
@@ -26,10 +25,8 @@ public class Main {
 		MainFrame.setSize(screenWidth, screenHeight);
 		MainFrame.getContentPane().setBackground(Color.black);
 		
-		try (
-				Image icon = Toolkit.getDefaultToolkit().getImage(getClass().getResource("/Assets/icon.jpg"){
+		Image icon = Toolkit.getDefaultToolkit().getImage(getClass().getResource("/Assets/icon.jpg"));
 			
-		}
 		MainFrame.setIconImage(icon);
 		
 		JTextArea MainTitle = new JTextArea(1, 1);
