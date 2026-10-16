@@ -1,44 +1,22 @@
 package Test;
-import java.awt.Dimension;
-import java.awt.Toolkit;
-import javax.swing.*;
-import java.awt.Color;
-import java.awt.Image;
+
 public class Main {
 	
-	// Get screen size to create the window with these values
-	
-	Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
-	int screenHeight = screenSize.height;
-	int screenWidth = screenSize.width;
-	
-	void SetVisible(Boolean isTrue, JFrame Element) {
-		Element.setVisible(isTrue);
+	class Solution {
+	    public int[] twoSum(int[] nums, int target) {
+	        byte Exponente = 1;
+	    	int NumeroBase = nums[Exponente];
+	        int NumeroASumar = 0, Solucion;
+	        while (Solucion != target){
+	            
+	        	for (int i = 0; i < nums.length;i++){
+	                Solucion = NumeroBase + nums[i]; 
+	                System.out.println(Solucion);    
+	                if (i == nums.length) {
+	                	NumeroBase = 
+	                }
+	            }
+	        }
+	        return Solucion;
+	    }
 	}
-	
-	void chunckGenerator(short sizeX, short sizeY) {
-		
-	}
-	
-	void Interfaz(String args[]) {
-		JFrame MainFrame = new JFrame();
-		MainFrame.setSize(screenWidth, screenHeight);
-		MainFrame.getContentPane().setBackground(Color.black);
-		
-		Image icon = Toolkit.getDefaultToolkit().getImage(getClass().getResource("/Assets/icon.jpg"));
-			
-		MainFrame.setIconImage(icon);
-		
-		JTextArea MainTitle = new JTextArea(1, 1);
-		MainTitle.setText("TEST");
-
-		MainTitle.setVisible(true);
-		
-		
-		SetVisible(true, MainFrame);
-	}
-	
-	void main(String args[]) {
-		Interfaz(args);
-	}
-}
