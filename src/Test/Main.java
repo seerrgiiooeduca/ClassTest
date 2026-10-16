@@ -5,7 +5,7 @@ public class Main {
 	class Solution {
 	    public int[] twoSum(int[] nums, int target) {
 	        byte Exponente = 1;
-	    	int NumeroBase = nums[Exponente];
+	    	int NumeroBase = nums[];
 	        int NumeroASumar = 0, Solucion;
 	        while (Solucion != target){
 	            
@@ -13,6 +13,7 @@ public class Main {
 	                Solucion = NumeroBase + nums[i]; 
 	                System.out.println(Solucion);    
 	                if (i == nums.length) {
+	                	Expone
 	                	NumeroBase = 
 	                }
 	            }
