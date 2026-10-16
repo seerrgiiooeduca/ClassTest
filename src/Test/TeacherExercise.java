@@ -31,7 +31,7 @@ public class TeacherExercise {
 				System.out.println("Too high!");
 			}
 		}
-		
+		 
 		StringJoiner UserNumbersJoiner = new StringJoiner(", ");
 		for(int i = 0; i<userAttempts; i++) {
 			Collections.sort(usernumbers);
