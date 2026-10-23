@@ -14,7 +14,6 @@ public class TeacherExercise {
 		ArrayList<Integer> usernumbers = new ArrayList<>();
 		
 		rand=(int)(Math.random()*100);
-		System.out.println(rand);
 		Scanner asker = new Scanner(System.in);
 		
 		System.out.println("You have to guess a number between 1 and 100");
