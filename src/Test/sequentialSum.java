@@ -1,6 +1,5 @@
 package Test;
 
-import javax.swing.plaf.synth.SynthToggleButtonUI;
 
 public class sequentialSum {
     public static int missingInteger(int[] nums) {
@@ -23,6 +22,7 @@ public class sequentialSum {
 	public static void main(String[] args) {
 		
 		int suffix = missingInteger(new int[] {2, 3, 4, 7, 5});
+		System.out.println(suffix);
 	}
 }
 

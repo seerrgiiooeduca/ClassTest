@@ -2,12 +2,6 @@ package Test;
 import java.util.Scanner;
 
 public class ClassTest {
-	public static void main(String args[]) {
-		Scanner mainScanner = new Scanner(System.in);
-//		ScannerExam();
-//		twoDecimalsAverage(mainScanner);
-		mainScanner.close();
-	}
 	
 	public static void Exercise1(double EURO) {
 		System.out.println("We have:" + EURO + "€");
@@ -340,5 +334,75 @@ public class ClassTest {
 	
 	static void parseExample() {
 		
+	}
+	
+//	Activity 43: Draw a square of "n" side elements using *. ​
+//
+//	"n" must be requested from the user.​
+//
+//	For example, if the "n" entered is 4, it should print on the screen:​
+	
+	static void squareExercise() {
+	    Scanner keyboard = new Scanner(System.in);
+	    System.out.println("How many rows and columns our square is going to have?");
+	    int times = keyboard.nextInt();
+	    
+	    for(int i = 0; i < times; i++) {
+
+	        for(int j = 0; j < times; j++) {
+	            System.out.print('*');
+	        }
+	        System.out.println();	    }
+	    
+	    keyboard.close();
+	}
+	
+//	Activity 44: Design a program that displays the multiplication tables from 1 to 10. ​
+//
+//	It should be displayed like this for all numbers from 1 to 10:​	
+
+	static void multiplicationTablet() {
+		short multiply = 10;
+		for(int i = 1; i < 11; i++) {
+			System.out.println(i + " * " + multiply + " = " +  i*multiply);
+		}
+	}
+	
+//	Activity 45: Given 6 grades, write the number of passing, conditional (=4) and failing students. ​
+	
+	static void sixGrades() {
+		Scanner numbers = new Scanner(System.in);
+		short howMany = 6, conditional = 4;
+		
+		for (int i = 0; i < howMany; i++) {
+			System.out.println("Tell me the grade");
+			double grade = numbers.nextDouble();
+			if(grade < conditional) {
+				System.out.println("You failed");
+			} else if (grade > conditional) {
+				System.out.println("You passed");
+			} else {
+				System.out.println("You are on conditional");				
+			}
+		}
+		numbers.close();
+	}
+	
+	// Activity 46: Ask for 10 numbers, and show at the end if you have entered any greater than 8.​
+	static void tenGrades() {
+		Scanner numbers = new Scanner(System.in);
+		short howMany = 10, conditional = 8, count = 0;
+		double grade[] = new double[howMany];
+		for (int i = 0; i < howMany; i++) {
+			grade[i] = numbers.nextDouble();
+			if(grade[i] >= conditional) {
+				count = (short) (count + 1);
+			}
+		}
+		numbers.close();
+		System.out.println("You have entered a greater number " + count + " times");
+	}
+	public static void main(String args[]) {
+		tenGrades();
 	}
 }
