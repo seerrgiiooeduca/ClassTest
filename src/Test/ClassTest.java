@@ -489,6 +489,7 @@ public class ClassTest {
 			}
 		}
 		System.out.println("Characters between 'I' and 'P': " + count);
+		scanner.close();
 	}
 
 	static void activity52() {
@@ -523,6 +524,7 @@ public class ClassTest {
 		} else {
 			System.out.println("No negative numbers were entered.");
 		}
+		scanner.close();
 	}
 
 	static void activity53() {
@@ -545,6 +547,7 @@ public class ClassTest {
 			sum += i;
 		}
 		System.out.println("Sum: " + sum);
+		scanner.close();
 	}
 
 	static void activity54() {
@@ -574,10 +577,36 @@ public class ClassTest {
 				System.out.println("Invalid input. Please enter Y or N.");
 			}
 		} while (choice == 'Y' || choice == 'y');
+		scanner.close();
+	}
+
+	static int mySqrt(int x) {
+		if (x == 0 || x == 1) {
+			return x;
+		}
+
+		int inicio = 1;
+		int fin = x;
+		int respuesta = 0;
+
+		while (inicio <= fin) {
+			int medio = inicio + (fin - inicio) / 2;
+
+			if (medio <= x / medio) {
+				respuesta = medio;
+				inicio = medio + 1;
+			} else {
+				fin = medio - 1;
+			}
+		}
+
+		return respuesta;
 	}
 
 	public static void main(String args[]) {
-		activity54();
+		int asdas = mySqrt(8);
+		System.out.println("mysqrt is " + asdas);
+
 	}
 
 }
