@@ -1,5 +1,6 @@
 package Test;
 
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class ClassTest {
@@ -602,10 +603,44 @@ public class ClassTest {
 
 		return respuesta;
 	}
+	
+    static int[] shuffle(int[] nums, int n) {
+    	int[] firstHalf = new int[nums.length / 2];
+    	int[] secondHalf = new int[nums.length / 2];
+    	int[] result = new int[nums.length];
 
+        for(int i = 0; i < nums.length; i++) {
+            if(i < n) {
+            	firstHalf[i] = nums[i];
+            } else {
+            	secondHalf[i - n] = nums[i];
+            }
+        }
+        
+        for(int i = 0; i < n; i++) {
+        	result[2 * i] = firstHalf[i];
+        	result[2 * i + 1] = secondHalf[i];
+        }
+		return result;
+    }
+
+    public int[] plusOne(int[] digits) {
+        for(int i = digits.length -1; i >= 0; i = i - 1){
+                System.out.println(digits.length + " i: " + i + " number at i is " + digits[i]);
+            if (digits[i] == 9 && i != 0) {
+                digits[i] = 0;
+                digits[i - 1]++;
+            } else{
+                digits[digits.length - 1]= digits[digits.length - 1] + 1;
+            }
+        }
+        return digits;
+    }
+    
 	public static void main(String args[]) {
-		int asdas = mySqrt(8);
-		System.out.println("mysqrt is " + asdas);
+		int[] nums = {2,5,1,3,4,7};
+		int[] asdas = shuffle(nums, 3);
+		System.out.println("shuffle is " + Arrays.toString(asdas) );
 
 	}
 
