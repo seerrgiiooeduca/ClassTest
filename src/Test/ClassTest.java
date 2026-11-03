@@ -528,7 +528,7 @@ public class ClassTest {
 		scanner.close();
 	}
 
-	static void activity53() {
+	public static void activity53() {
 		Scanner scanner = new Scanner(System.in);
 		int num1, num2;
 
